@@ -1,1 +1,1 @@
-# LangChain Documentation Helper
+This project implements a Retrieval-Augmented Generation (RAG) pipeline for building an AI assistant over EY documentation. It crawls documentation, splits content into chunks, generates vector embeddings, stores them in Pinecone, and retrieves relevant content to help an LLM generate accurate, context-aware responses with source citations.
