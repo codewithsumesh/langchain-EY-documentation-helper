@@ -23,7 +23,7 @@ model = init_chat_model("gpt-5.2", model_provider="openai")
 
 @tool(response_format="content_and_artifact")
 def retrieve_context(query: str):
-    """Retrieve relevant documentation to help answer user queries about LangChain."""
+    """Retrieve relevant documentation to help answer user queries about EY."""
     # Retrieve top 4 most similar documents
     retrieved_docs = vectorstore.as_retriever().invoke(query, k=4)
     
@@ -51,11 +51,11 @@ def run_llm(query: str) -> dict[str, Any]:
     """
     # Create the agent with retrieval tool
     system_prompt = (
-        "You are a helpful AI assistant that answers questions about LangChain documentation. "
-        "You have access to a tool that retrieves relevant documentation. "
-        "Use the tool to find relevant information before answering questions. "
-        "Always cite the sources you use in your answers. "
-        "If you cannot find the answer in the retrieved documentation, say so."
+    "You are a helpful AI assistant that answers questions about EY documentation. "
+    "You have access to a tool that retrieves relevant EY documentation. "
+    "Use the tool to find relevant information before answering questions. "
+    "Always cite the sources you use in your answers. "
+    "If you cannot find the answer in the retrieved documentation, say so."
     )
     
     agent = create_agent(model, tools=[retrieve_context], system_prompt=system_prompt)

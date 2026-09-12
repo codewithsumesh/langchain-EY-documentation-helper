@@ -55,7 +55,8 @@ tavily_extract = TavilyExtract()
 tavily_map = TavilyMap(max_depth=5, max_breadth=20, max_pages=1000)
 tavily_crawl = TavilyCrawl()
 
-'''The Document class is a standard container for a piece of text plus information about where it came from.
+'''example
+The Document class is a standard container for a piece of text plus information about where it came from.
 Document
 ├── page_content
 │   └── "LangChain is a framework..."
